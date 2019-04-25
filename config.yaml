@@ -1,12 +1,12 @@
-samples: samples.tsv
-units: units.tsv
+samples: /ddn/home5/r2295/valbin/projects/Impulsivity/genotyping_sdh/data/samples.tsv
+units: /ddn/home5/r2295/valbin/projects/Impulsivity/genotyping_sdh/data/units.tsv
 
 ref:
   name: GRCh38.86
   # Path to the reference genome, ideally as it is provided by the GATK bundle.
-  genome: data/ref/genome.chr21.fa
+  genome: /ddn/home5/r2295/valbin/projects/Impulsivity/genotyping_sdh/data/ref/ucsc.hg19.fasta
   # Path to any database of known variants, ideally as it is provided by the GATK bundle.
-  known-variants: data/ref/dbsnp_138.hg19.vcf
+  known-variants: /ddn/home5/r2295/valbin/projects/Impulsivity/genotyping_sdh/data/ref/data/ref/dbsnp_138.hg19.vcf
 
 filtering:
   # Set to true in order to apply machine learning based recalibration of
