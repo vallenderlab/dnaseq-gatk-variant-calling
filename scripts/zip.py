@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-from zipfile import ZipFile
+import shutil
 
-output_zipfile = ZipFile("../../results/workflow.zip", mode='a')
-for folder in snakemake.input.folders:
-    output_zipfile.write(folder)
-output_zipfile.close()
+shutil.make_archive(snakemake.input.folder, snakemake.output.outfile)

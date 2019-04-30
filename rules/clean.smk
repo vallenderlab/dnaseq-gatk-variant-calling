@@ -1,3 +1,6 @@
+import time
+date = time.strftime("%Y_%m_%d")
+
 rule copy_results:
     input:
         all=["tables/calls.tsv.gz", "annotated/all.vcf.gz"]
@@ -9,8 +12,8 @@ rule copy_results:
 
 rule zip_workflow:
     input:
-        folders=["tables/", "annotated/"]
+        folder="../dna-seq-gatk-variant-calling"
     output:
-        outfile="../../results/workflow.zip"
+        outfile="../../results/{date}_workflow.zip"
     script:
         "../scripts/zip.py"
