@@ -9,6 +9,8 @@ properties:
     type: string
   units:
     type: string
+  projectroot:
+    type: string
 
   ref:
     type: object
@@ -89,3 +91,4 @@ required:
   - filtering
   - processing
   - params
+  - projectroot

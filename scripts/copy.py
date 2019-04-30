@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import shutil
-
+import os
 
 def copy_results():
     for file in snakemake.input.results:
