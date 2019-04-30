@@ -1,4 +1,4 @@
-rule move_results:
+rule copy_results:
     input:
         all=["tables/calls.tsv.gz", "annotated/all.vcf.gz"]
     output:
