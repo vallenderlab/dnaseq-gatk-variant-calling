@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import shutil
-import os
-
-def copy_results():
-    for file in snakemake.input.results:
-        shutil.copyfile(file, "../../data/" + file)
 
 
-def copy_data():
-    for directory in snakemake.input.dirs:
-        shutil.copytree(directory, "../../data/" + directory)
+def copy_results(infiles, outfiles):
+    for infile, outfile in zip(infiles, outfiles):
+        shutil.copyfile(infile, outfile)
+
+
+def copy_data(indirs, outdirs):
+    for indir, outdir in zip(indirs, outdirs):
+        shutil.copytree(indir, outdir)

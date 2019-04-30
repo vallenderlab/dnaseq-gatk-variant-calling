@@ -10,13 +10,13 @@ rule copy_results:
         results=["tables/calls.tsv.gz", "annotated/all.vcf.gz", "qc/multiqc.html",
             "plots/depths.svg", "plots/allele-freqs.svg"]
     output:
-        all=[join(outpath, "results/tables/calls.tsv.gz"),
+        outresults=[join(outpath, "results/tables/calls.tsv.gz"),
             join(outpath, "results/annotated/all.vcf.gz"),
             join(outpath, "results/qc/multiqc.html"),
             join(outpath, "results/plots/depths.svg"),
             join(outpath, "results/plots/depths.svg")]
     run:
-        "copy_results()"
+        "copy_results(input.results, output.outresults)"
 
 
 rule copy_data:
@@ -34,7 +34,7 @@ rule copy_data:
             directory(join(outpath, "data/genotyped")),
             directory(join(outpath, "data/annotated"))]
     run:
-        "copy_data()"
+        "copy_data(input.dirs, output.all)"
 
 
 rule zip_workflow:
