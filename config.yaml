@@ -1,6 +1,6 @@
 samples: /ddn/home5/r2295/valbin/projects/Impulsivity/genotyping_sdh/data/samples.tsv
 units: /ddn/home5/r2295/valbin/projects/Impulsivity/genotyping_sdh/data/units.tsv
-projectroot: /home/shutchins2/saliva-genotyping/
+projectroot: /home/shutchins2/saliva-genotyping
 
 ref:
   name: GRCh38.86

@@ -1,27 +1,29 @@
-from copy import *
 from os.path import join
 import time
+
+from copy import *
+
 date = time.strftime("%Y_%m_%d")
 
 outpath = config["projectroot"]
+results_path = join(outpath, "results")
+data_path = join(outpath, "data")
 
 rule copy_results:
     input:
-        results=["tables/calls.tsv.gz", "annotated/all.vcf.gz", "qc/multiqc.html",
-            "plots/depths.svg", "plots/allele-freqs.svg"]
+        results=["tables/", "annotated/", "qc/", "plots/"]
     output:
         outresults=[join(outpath, "results/tables/calls.tsv.gz"),
             join(outpath, "results/annotated/all.vcf.gz"),
             join(outpath, "results/qc/multiqc.html"),
             join(outpath, "results/plots/depths.svg"),
-            join(outpath, "results/plots/depths.svg")]
-    run:
-        "copy_results(input.results, output.outresults)"
-
+            join(outpath, "results/plots/allele-freqs.svg")]
+    shell:
+        "cp -R {input.results} {results_path}"
 
 rule copy_data:
     input:
-        dirs=["qc", "snpeff", "mapped", "trimmed", "recal", "filtered", "called",
+        dirs=["snpeff", "mapped", "trimmed", "recal", "filtered", "called",
             "genotyped", "annotated"]
     output:
         all=[directory(join(outpath, "data/qc")),
@@ -33,9 +35,8 @@ rule copy_data:
             directory(join(outpath, "data/called")),
             directory(join(outpath, "data/genotyped")),
             directory(join(outpath, "data/annotated"))]
-    run:
-        "copy_data(input.dirs, output.all)"
-
+    shell:
+        "cp -R {input.dirs} {data_path}"
 
 rule zip_workflow:
     input:
