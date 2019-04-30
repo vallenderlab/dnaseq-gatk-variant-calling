@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
 import shutil
 
-shutil.make_archive(snakemake.output.outfile, "zip", snakemake.input.folder)
+archive = str(snakemake.output.outfile).split(".")
+
+shutil.make_archive(archive[0], "zip", snakemake.input.folder)

@@ -8,6 +8,7 @@ date = time.strftime("%Y_%m_%d")
 outpath = config["projectroot"]
 results_path = join(outpath, "results")
 data_path = join(outpath, "data")
+archive_path = join(outpath, "results/{}_workflow".format(date))
 
 rule copy_results:
     input:
@@ -42,6 +43,6 @@ rule zip_workflow:
     input:
         folder="../dna-seq-gatk-variant-calling"
     output:
-        outfile=join(outpath, "results/{}_workflow".format(date))
+        outfile="{}.zip".format(archive_path)
     script:
         "../scripts/zip.py"
