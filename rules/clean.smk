@@ -14,6 +14,6 @@ rule zip_workflow:
     input:
         folder="../dna-seq-gatk-variant-calling"
     output:
-        outfile="../../results/{date}_workflow.zip"
+        outfile="../../results/{}_workflow.zip".format(date)
     script:
         "../scripts/zip.py"
