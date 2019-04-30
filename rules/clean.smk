@@ -19,7 +19,7 @@ rule copy_data:
     output:
         all=["../../data/qc", "../../data/snpeff", "../../data/mapped", "../../data/trimmed",
             "../../data/recal", "../../data/filtered", "../../data/called", "../../data/genotyped",
-            ../../data/annotated"]
+            "../../data/annotated"]
     run:
         copy.copy_data()
 
