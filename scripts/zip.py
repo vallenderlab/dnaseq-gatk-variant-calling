@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 import shutil
 
-shutil.make_archive(snakemake.input.folder, "zip", snakemake.output.outfile)
+shutil.make_archive(snakemake.output.outfile, "zip", snakemake.input.folder)
