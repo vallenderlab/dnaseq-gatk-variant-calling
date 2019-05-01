@@ -1,13 +1,20 @@
+import time
+
+date = time.strftime("%Y_%m_%d")
+
+archive_path = "archive/{}_workflow".format(date)
+
 include: "rules/common.smk"
 
 ##### Target rules #####
 
 rule all:
     input:
-        "annotated/all.vcf.gz",
-        "qc/multiqc.html",
-        "plots/depths.svg",
-        "plots/allele-freqs.svg"
+        "results/annotated/all.vcf.gz",
+        "results/qc/multiqc.html",
+        "results/plots/depths.svg",
+        "results/plots/allele-freqs.svg",
+        "{}.zip".format(archive_path)
 
 
 ##### Modules #####
