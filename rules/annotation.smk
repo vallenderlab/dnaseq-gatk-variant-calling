@@ -1,9 +1,9 @@
 rule snpeff:
     input:
-        "filtered/all.vcf.gz",
+        "data/filtered/all.vcf.gz",
     output:
-        vcf=report("annotated/all.vcf.gz", caption="../report/vcf.rst", category="Calls"),
-        csvstats="snpeff/all.csv"
+        vcf=report("results/annotated/all.vcf.gz", caption="../report/vcf.rst", category="Calls"),
+        csvstats="results/snpeff/all.csv"
     log:
         "logs/snpeff.log"
     params:
