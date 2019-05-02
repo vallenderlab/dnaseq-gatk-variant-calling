@@ -1,14 +1,15 @@
 # Snakemake workflow: dna-seq-gatk-variant-calling
 
 [![Snakemake](https://img.shields.io/badge/snakemake-≥5.1.5-brightgreen.svg)](https://snakemake.bitbucket.io)
-[![Build Status](https://travis-ci.org/snakemake-workflows/dna-seq-gatk-variant-calling.svg?branch=master)](https://travis-ci.org/snakemake-workflows/dna-seq-gatk-variant-calling)
-[![Snakemake-Report](https://img.shields.io/badge/snakemake-report-green.svg)](https://cdn.rawgit.com/snakemake-workflows/dna-seq-gatk-variant-calling/master/.test/report.html)
+[![Build Status](https://travis-ci.org/vallenderlab/dna-seq-gatk-variant-calling.svg?branch=master)](https://travis-ci.org/snakemake-workflows/dna-seq-gatk-variant-calling)
+[![Snakemake-Report](https://img.shields.io/badge/snakemake-report-green.svg)](https://cdn.rawgit.com/vallenderlab/dna-seq-gatk-variant-calling/master/.test/report.html)
 
 This Snakemake pipeline implements the [GATK best-practices workflow](https://software.broadinstitute.org/gatk/best-practices/workflow?id=11145) for calling small genomic variants.
 
 ## Authors
 
-* Johannes Köster (https://koesterlab.github.io)
+* [Johannes Köster](https://koesterlab.github.io)
+* Shaurita Hutchins
 
 ## Usage
 
@@ -57,7 +58,7 @@ After successful execution, you can create a self-contained interactive HTML rep
     snakemake --report report.html
 
 This report can, e.g., be forwarded to your collaborators.
-An example, using some trivial test data, can be seen [here](https://cdn.rawgit.com/snakemake-workflows/dna-seq-gatk-variant-calling/master/.test/report.html).
+An example, using some trivial test data, can be seen [here](https://cdn.rawgit.com/vallenderlab/dna-seq-gatk-variant-calling/master/.test/report.html).
 
 ### Advanced
 
@@ -69,7 +70,7 @@ The following recipe provides established best practices for running and extendi
 4. Modify the config, and any necessary sheets (and probably the workflow) as needed.
 5. Commit any changes and push the project-branch to your fork on github.
 6. Run the analysis.
-7. Optional: Merge back any valuable and generalizable changes to the [upstream repo](https://github.com/snakemake-workflows/dna-seq-gatk-variant-calling) via a [**pull request**](https://help.github.com/en/articles/creating-a-pull-request). This would be **greatly appreciated**.
+7. Optional: Merge back any valuable and generalizable changes to the [upstream repo](https://github.com/vallenderlab/dna-seq-gatk-variant-calling) via a [**pull request**](https://help.github.com/en/articles/creating-a-pull-request). This would be **greatly appreciated**.
 8. Optional: Push results (plots/tables) to the remote branch on your fork.
 9. Optional: Create a self-contained workflow archive for publication along with the paper (snakemake --archive).
 10. Optional: Delete the local clone/workdir to free space.
