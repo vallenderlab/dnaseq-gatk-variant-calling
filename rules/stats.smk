@@ -7,7 +7,7 @@ rule vcf_to_tsv:
         "../envs/rbt.yaml"
     shell:
         "bcftools view --apply-filters PASS --output-type u {input} | "
-        "rbt vcf-to-txt -g --fmt DP AD --info ANN | "
+        "rbt vcf-to-txt -g --fmt AD DP GQ GT --info ANN DB AC AF DP FS SOR | "
         "gzip > {output}"
 
 
